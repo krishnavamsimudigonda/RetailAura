@@ -2,6 +2,7 @@ package com.adina.retailaura.scan_pay
 
 
 import android.graphics.Paint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.adina.retailaura.Models.Product
 import com.adina.retailaura.databinding.ItemProductBinding
 import com.bumptech.glide.Glide
+
 
 class productAdapter(
     private val products: MutableList<Product>,
@@ -87,7 +89,6 @@ class productAdapter(
     override fun getItemCount(): Int = products.size
 
     fun addProduct(product: Product) {
-        // Check if the product already exists
         val existingProduct = products.find { it.id == product.id }
         if (existingProduct != null) {
             existingProduct.quantity += product.quantity
@@ -98,6 +99,9 @@ class productAdapter(
         }
         updateDiscountPrice(calculateDiscountPrice())
         amountSaved(calculateAmountSaved())
+
+        // Log product list to verify
+        Log.d("productAdapter", "Products: $products")
     }
 
     private fun calculateAmountSaved(): Double {

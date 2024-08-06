@@ -111,4 +111,5 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Failed to fetch product", Toast.LENGTH_SHORT).show()
             }
     }
+
 }

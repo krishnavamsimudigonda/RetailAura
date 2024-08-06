@@ -25,7 +25,7 @@ class ChatActivity : AppCompatActivity() {
     private val chatMessages = mutableListOf<ChatMessage>()
     private val generativeModel = GenerativeModel(
         modelName = "gemini-1.5-flash",
-       // apiKey = <Your Api Key>
+//        apiKey = <API Key>
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

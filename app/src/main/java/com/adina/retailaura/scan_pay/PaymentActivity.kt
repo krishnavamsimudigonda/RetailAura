@@ -32,7 +32,7 @@ class PaymentActivity : AppCompatActivity(), PaymentResultListener {
         val co = Checkout()
 
         // Set your Razorpay API key
-        co.setKeyID(<razor_pay_api>)
+        co.setKeyID("razor-pay-API-KEY")
 
         try {
             val options = JSONObject()
